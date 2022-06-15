@@ -105,3 +105,97 @@ if (itemOne.hasAttribute('class')) {
     itemOne.removeAttribute('class');
     
 }
+
+tableContainer = document.getElementById('table');
+
+table = document.createElement('table');
+tableContainer.appendChild(table);
+table.setAttribute('border','2px solid gray');
+table.style.backgroundColor = 'yellow'
+
+tableC = table.createCaption();
+tableC.innerHTML = '<p> students table </p>'
+
+tr = document.createElement('tr');
+table.appendChild(tr);
+
+th1 = document.createElement('th');
+z = document.createTextNode('name');
+th1.appendChild(z);
+tr.appendChild(th1);
+
+th2 = document.createElement('th');
+z1 = document.createTextNode('age');
+th2.appendChild(z1);
+tr.appendChild(th2);
+
+
+
+row1 = document.createElement('tr');
+table.appendChild(row1)
+
+data1 = document.createElement('td');
+data1T = document.createTextNode('eslam');
+data1.appendChild(data1T);
+row1.appendChild(data1);
+
+data2 = document.createElement('td');
+data2T = document.createTextNode(31);
+data2.appendChild(data2T);
+row1.appendChild(data2);
+
+row2 = document.createElement('tr');
+table.appendChild(row2)
+
+data1 = document.createElement('td');
+data1tt = document.createTextNode('alaa');
+data1.appendChild(data1tt)
+row2.appendChild(data1);
+
+data2 = document.createElement('td');
+data2tt = document.createTextNode(32);
+data2.appendChild(data2tt)
+row2.appendChild(data2);
+
+// DOM TABLE 
+
+
+function generate_table() {
+    // creates a <table> element and a <tbody> element
+     const tbl = document.createElement("table");
+     const tblBody = document.createElement("tbody");
+   
+     // creating all cells
+     for (let i = 0; i < 2; i++) {
+       // creates a table row
+       const row = document.createElement("tr");
+   
+       for (let j = 0; j < 2; j++) {
+         // Create a <td> element and a text node, make the text
+         // node the contents of the <td>, and put the <td> at
+         // the end of the table row
+         const cell = document.createElement("td");
+         const cellText = document.createTextNode("cell in row "+i+", column "+j);
+         cell.appendChild(cellText);
+         cell.style.textAlign = 'center';
+         cell.style.padding = '5px';
+         cell.style.border = '2px solid yellow';
+         row.appendChild(cell);
+       }
+   
+       // add the row to the end of the table body
+       tblBody.appendChild(row);
+     }
+   
+     // put the <tbody> in the <table>
+     tbl.appendChild(tblBody);
+     // appends <table> into <body>
+     document.body.appendChild(tbl);
+     // sets the border attribute of tbl to '2'
+     tbl.setAttribute("border", "2");
+     tbl.style.border = '5px dashed red'
+   }
+   
+
+
+
